@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>FootGoat</title>
+</head>
+<body>
+
+<h1>Players</h1>
+
+<table>
+
+    <tr>
+        <th>Name</th>
+        <th>Club</th>
+        <th>Position</th>
+    </tr>
+
+    <tr th:each="player : ${playersPage.content}">
+        <td th:text="${player.name}"></td>
+        <td th:text="${player.currentClubName}"></td>
+        <td th:text="${player.position}"></td>
+    </tr>
+
+</table>
+
+<br>
+
+<a th:if="${!playersPage.first}"
+   th:href="@{/players(page=${currentPage-1})}">
+    Previous
+</a>
+
+<span>
+    Page [[${currentPage+1}]]
+</span>
+
+<a th:if="${!playersPage.last}"
+   th:href="@{/players(page=${currentPage+1})}">
+    Next
+</a>
+
+</body>
+</html>
