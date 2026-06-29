@@ -1,11 +1,11 @@
 package org.footgoat.player;
 
 import lombok.RequiredArgsConstructor;
+import org.footgoat.model.Player;
+import org.footgoat.repositories.PlayerRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
